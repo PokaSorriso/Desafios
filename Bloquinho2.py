@@ -20,7 +20,7 @@ if(menu == 1):
     print(trad[x])
 
 if(menu == 2):
-    n_jogos = int(input('Quantos jogos serão feitos?'))
+    n_jogos = int(input('Quantos jogos serão feitos?\n'))
     palpites = list()
     cont = 0
     while True:
@@ -31,6 +31,7 @@ if(menu == 2):
             cont = cont + 1
         if cont == n_jogos:
             break
+    print(palpites)
 
 if(menu == 3):
     nome, media = input('Digite o nome e média do aluno\n\n'), float(input('\n'))
