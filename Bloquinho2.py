@@ -5,12 +5,12 @@ Created on Wed Feb  2 17:12:50 2022
 @author: falco
 """
 
+import random as rd
 import numpy as np
-import random
 
 menu = int(input('Digite o número do desafio\n'))
 
-if(menu == 1):
+if menu==1:
     nums = tuple(np.arange(0,20))
     trad = {0:'zero',1:'um',2:'dois',3:'três',4:'quatro',5:'cinco',
             6:'seis',7:'sete',8:'oito',9:'nove',10:'dez',11:'onze',
@@ -19,21 +19,22 @@ if(menu == 1):
     x = int(input('Digite um número de 1 a 20\n'))
     print(trad[x])
 
-if(menu == 2):
+if menu==2:
     n_jogos = int(input('Quantos jogos serão feitos?\n'))
     palpites = list()
     cont = 0
     while True:
-        x = list(int(60*random.random()) for j in range(0,6))
+        x = list(int(60*rd.random()) for j in range(0,6))
         x.sort()
-        if(x not in palpites):
+        if x not in palpites:
             palpites.append(x)
             cont = cont + 1
-        if cont == n_jogos:
+        if cont==n_jogos:
             break
     print(palpites)
 
-if(menu == 3):
+if menu==3:
     nome, media = input('Digite o nome e média do aluno\n\n'), float(input('\n'))
     situação = {True:'Aprovado',False:'Reprovado'}
-    print(f'O aluno {nome}\nFicou com média {media}\nPortanto foi {situação[media>=5]} na disciplina')
+    print(f'O aluno {nome}\nFicou com média {media}\nPortanto foi '
+          '{situação[media>=5]} na disciplina')
